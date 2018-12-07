@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
-    android:background="@color/colorBlockGray"
+    android:background="@color/background"
     android:orientation="horizontal">
 
     <ImageButton
@@ -18,13 +18,13 @@
         android:background="@drawable/draw_circle"
 
         android:scaleType="centerInside"
-        android:src="@drawable/video_player_icon_32"
+        android:src="@drawable/video_pen_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <ImageButton
         android:id="@+id/bt_main_write"
@@ -38,13 +38,13 @@
         android:background="@drawable/draw_circle"
         android:onClick="To_Write"
         android:scaleType="centerInside"
-        android:src="@drawable/video_player_icon_32"
+        android:src="@drawable/video_player_icon4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
