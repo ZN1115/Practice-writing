@@ -8,10 +8,8 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private ImageButton Video_Array;
     private ImageButton Write_Array;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

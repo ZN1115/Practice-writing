@@ -8,11 +8,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class StrokeAdapter extends RecyclerView.Adapter<StrokeAdapter.ViewHolder> {
 
 
     ArrayList<String> mData;
-    MyAdapter(ArrayList<String> data) {
+    StrokeAdapter(ArrayList<String> data) {
         mData=data;
     }
 
@@ -20,7 +20,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder{
         // 宣告元件
         private TextView txtItem;
-
         ViewHolder(View itemView) {
             super(itemView);
             txtItem = (TextView) itemView.findViewById(R.id.txtItem);
