@@ -18,7 +18,7 @@
         android:background="@drawable/draw_circle"
 
         android:scaleType="centerInside"
-        android:src="@drawable/video_pen_icon"
+        android:src="@drawable/video_player_icon4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="1.0"
@@ -38,7 +38,7 @@
         android:background="@drawable/draw_circle"
         android:onClick="To_Write"
         android:scaleType="centerInside"
-        android:src="@drawable/video_player_icon4"
+        android:src="@drawable/video_pen_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

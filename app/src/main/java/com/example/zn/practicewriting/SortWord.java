@@ -5,20 +5,15 @@ import android.app.Activity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Set;
 
 public class SortWord extends Activity {
 
-
     private RecyclerView recycler_view;
-    private MyAdapter adapter;
+    private StrokeAdapter adapter;
     private ArrayList<String> DataSize;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +29,22 @@ public class SortWord extends Activity {
             System.out.println(DataSize.get(i));
         }
 
-
         // 連結元件
         recycler_view = (RecyclerView) findViewById(R.id.RecycleView);
         // 設置RecyclerView為列表型態
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recycler_view.setLayoutManager(layoutManager);
 
-
         // 將資料交給adapter
-        adapter = new MyAdapter(DataSize);
+        adapter = new StrokeAdapter(DataSize);
         // 設置adapter給recycler_view
         recycler_view.setAdapter(adapter);
     }
-    /*點擊事件*/public void myItemClick(View view){
+
+    /*點擊事件*/
+    public void myItemClick(View view){
+
+        Toast.makeText(this,"Click",Toast.LENGTH_SHORT).show();
     }
 
 }
