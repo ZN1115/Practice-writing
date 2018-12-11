@@ -1,50 +1,70 @@
 package com.example.zn.practicewriting;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class SortWord extends Activity {
 
     private RecyclerView recycler_view;
-    private StrokeAdapter adapter;
     private ArrayList<String> DataSize;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_recycleview);
-        DataSize=new ArrayList<>();
+        init();
 
-        // 準備資料，塞50個項目到ArrayList裡
-        for (int i = 1; i <= 16; i++) {
-            DataSize.add(String.valueOf(i)+"筆劃");
-        }
-        for(int i=0;i<DataSize.size();i++){
-            System.out.println(DataSize.get(i));
+        String[] temp = getResources().getStringArray(R.array.Stroke);
+        for (int i = 0; i < temp.length; i++) {
+            DataSize.add(temp[i]);
         }
 
-        // 連結元件
+        //設置RecyclerView為列表型態
+        recycler_view.setLayoutManager(new GridLayoutManager(this, 2));
+
+        //設置adapter給recycler_view
+        recycler_view.setAdapter(new StrokeAdapter(DataSize));
+    }
+
+    //initialize
+    public void init(){
         recycler_view = (RecyclerView) findViewById(R.id.RecycleView);
-        // 設置RecyclerView為列表型態
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        recycler_view.setLayoutManager(layoutManager);
-
-        // 將資料交給adapter
-        adapter = new StrokeAdapter(DataSize);
-        // 設置adapter給recycler_view
-        recycler_view.setAdapter(adapter);
+        DataSize = new ArrayList<>();
     }
 
-    /*點擊事件*/
     public void myItemClick(View view){
+        //Get the Position for any View
+        int view_Pos = recycler_view.findContainingViewHolder(view).getAdapterPosition();
 
-        Toast.makeText(this,"Click",Toast.LENGTH_SHORT).show();
+        //Intent Setting
+        Intent intent = new Intent();
+        intent.setClass(SortWord.this,WordList.class);
+
+        //Bundle Title and Stroke Code
+        Bundle bundle = new Bundle();
+        bundle.putString("Title",DataSize.get(view_Pos));
+        bundle.putString("Stroke","Word_"+makeCode(view_Pos+1));
+        intent.putExtras(bundle);
+
+        //Next Activity
+        startActivity(intent);
+
+        //Test
+        String str_Stroke = DataSize.get(view_Pos);
+        Toast.makeText(this,str_Stroke,Toast.LENGTH_SHORT).show();
     }
 
+    //make code for data(Hexadecimal)
+    public String makeCode(int number){
+        String Code = Integer.toHexString(number).toUpperCase();
+        while(Code.length() < 3){
+            Code = "0"+Code;
+        }
+        return Code;
+    }
 }
