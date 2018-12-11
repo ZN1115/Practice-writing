@@ -14,9 +14,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+
+    //initialize
+    public void init(){
         Video_Array = (ImageButton) findViewById(R.id.bt_main_video);
         Write_Array = (ImageButton) findViewById(R.id.bt_main_video);
-
     }
 
     public void To_Write(View view) {
