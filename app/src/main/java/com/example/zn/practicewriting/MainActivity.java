@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void To_Write(View view) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, SortWord.class);
+        intent.setClass(MainActivity.this, StrokeList.class);
         startActivity(intent);
     }
 }

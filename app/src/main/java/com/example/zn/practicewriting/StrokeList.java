@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-public class SortWord extends Activity {
+public class StrokeList extends Activity {
 
     private RecyclerView recycler_view;
     private ArrayList<String> DataSize;
@@ -43,7 +43,7 @@ public class SortWord extends Activity {
 
         //Intent Setting
         Intent intent = new Intent();
-        intent.setClass(SortWord.this,WordList.class);
+        intent.setClass(StrokeList.this,WordList.class);
 
         //Bundle Title and Stroke Code
         Bundle bundle = new Bundle();
