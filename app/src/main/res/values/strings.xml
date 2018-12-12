@@ -2,5 +2,9 @@
     <string name="app_name">writing</string>
     <string name="ItemWord">tv_ItemWord</string>
     <string name="title_activity_main2">Main2Activity</string>
-
+    <string name="btn_Start">播放</string>
+    <string name="btn_Starting">播放中</string>
+    <string name="btn_Restart">再次播放</string>
+    <string name="word_Next">下一個字</string>
+    <string name="canvas_Clear">清除字跡</string>
 </resources>

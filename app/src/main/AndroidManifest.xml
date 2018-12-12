@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SortWord"
+            android:name=".StrokeList"
             android:label="@string/title_activity_main2" />
         <activity android:name=".WordList" />
         <activity android:name=".DrawingBoard"></activity>

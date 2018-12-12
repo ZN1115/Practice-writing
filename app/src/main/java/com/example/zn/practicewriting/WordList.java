@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +42,6 @@ public class WordList extends AppCompatActivity {
         //Bundle getter
         Bundle bundle_title = this.getIntent().getExtras();
         String temp = bundle_title.getString(key);
-        Log.i("Capoo",temp);
         return temp;
     }
 
