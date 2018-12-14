@@ -1,9 +1,6 @@
 package com.example.zn.practicewriting;
 
 import android.content.Context;
-import android.provider.ContactsContract;
-import android.util.Log;
-
 import java.util.ArrayList;
 
 public class DataHandler {

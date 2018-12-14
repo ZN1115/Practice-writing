@@ -2,17 +2,14 @@ package com.example.zn.practicewriting;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
@@ -111,6 +108,7 @@ public class DrawingBoard extends AppCompatActivity {
     }
 
     public void wordNext(View view) {
+        btn_Multi_Status.setText(R.string.btn_Start);
         try{
             wordTmp = mSender.getNextWord(wordTmp,DataSize);
             mGifDrawable.recycle();
