@@ -20,7 +20,6 @@ public class StrokeList extends Activity {
         setContentView(R.layout.create_recycleview);
         init();
 
-        mSender = new DataHandler(this);
         DataSize = mSender.getStrokeData(DataSize);
 
         //設置RecyclerView為列表型態
@@ -34,6 +33,7 @@ public class StrokeList extends Activity {
     public void init(){
         recycler_view = (RecyclerView) findViewById(R.id.RecycleView);
         DataSize = new ArrayList<>();
+        mSender = new DataHandler(this);
     }
 
     public void myItemClick(View view){

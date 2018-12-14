@@ -56,14 +56,14 @@ public class DataHandler {
 
     public int deCode(String code){
         String tmp_code = "";
+        int codeNumber;
         for(int i = 0;i<code.length();i++){
             if(code.charAt(i) == '_'){
                 tmp_code = code.substring(i+1);
                 break;
             }
         }
-        int codeNumber = Integer.parseInt(tmp_code,16);
-        Log.i("Capoo",String.valueOf(codeNumber));
+        codeNumber = Integer.parseInt(tmp_code,16);
         return codeNumber;
     }
 }

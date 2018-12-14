@@ -33,11 +33,10 @@ public class DrawingBoard extends AppCompatActivity {
         setContentView(R.layout.activity_drawing_board);
 
         init();
-        mSender = new DataHandler(this);
         DataSize = mSender.getDrawableData(getBundleData("wordCode"),DataSize);
-        System.out.println(DataSize);
+
         try{
-            int resId = getResources().getIdentifier("wg001","drawable",getPackageName());
+            int resId = getResId();
             mGifDrawable = new GifDrawable(getResources(),resId);
             mGifImageView.setImageDrawable(mGifDrawable);
             mGifDrawable.setLoopCount(1);
@@ -59,6 +58,20 @@ public class DrawingBoard extends AppCompatActivity {
         btn_Multi_Status = findViewById(R.id.anime_Start);
         btn_NextWord = findViewById(R.id.word_Next);
         DataSize = new ArrayList<>();
+        mSender = new DataHandler(this);
+    }
+
+    public int getResId(){
+        int resId = 0;
+        String wordName = getBundleData("wordName");
+        for(int i=0;i<DataSize.size();i++){
+            String tmp = DataSize.get(i).word_Name;
+            if(tmp.equals(wordName)){
+                resId = getResources().getIdentifier(DataSize.get(i).drawable_Name,"drawable",getPackageName());
+                break;
+            }
+        }
+        return resId;
     }
 
     public String getBundleData(String key){
