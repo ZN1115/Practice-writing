@@ -261,4 +261,23 @@
         <item>龍</item>
         <item>龜</item>
     </string-array>
+
+    <integer-array name="Storke_weight">
+        <item>6</item>
+        <item>23</item>
+        <item>30</item>
+        <item>34</item>
+        <item>23</item>
+        <item>29</item>
+        <item>20</item>
+        <item>9</item>
+        <item>11</item>
+        <item>8</item>
+        <item>6</item>
+        <item>3</item>
+        <item>4</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
 </resources>

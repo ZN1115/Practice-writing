@@ -2,12 +2,14 @@ package com.example.zn.practicewriting;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,14 +25,19 @@ public class DrawingBoard extends AppCompatActivity {
     private Button btn_NextWord;
     private Timer mTimer;
     private DrawTool mDrawTool;
+    private DataHandler mSender;
+    private ArrayList<DrawableDataType> DataSize;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing_board);
 
         init();
+        DataSize = mSender.getDrawableData(getBundleData("wordCode"),DataSize);
+
         try{
-            mGifDrawable = new GifDrawable(getResources(),R.drawable.order2);
+            int resId = getResId();
+            mGifDrawable = new GifDrawable(getResources(),resId);
             mGifImageView.setImageDrawable(mGifDrawable);
             mGifDrawable.setLoopCount(1);
             mGifDrawable.stop();
@@ -38,6 +45,7 @@ public class DrawingBoard extends AppCompatActivity {
         catch (IOException e){
             e.printStackTrace();
         }
+
         mDrawTool = new DrawTool();
         mDrawTool.initPaint();
         mDrawTool.setOwner(mImageView);
@@ -49,6 +57,27 @@ public class DrawingBoard extends AppCompatActivity {
         mImageView = findViewById(R.id.iv_Canvas);
         btn_Multi_Status = findViewById(R.id.anime_Start);
         btn_NextWord = findViewById(R.id.word_Next);
+        DataSize = new ArrayList<>();
+        mSender = new DataHandler(this);
+    }
+
+    public int getResId(){
+        int resId = 0;
+        String wordName = getBundleData("wordName");
+        for(int i=0;i<DataSize.size();i++){
+            String tmp = DataSize.get(i).word_Name;
+            if(tmp.equals(wordName)){
+                resId = getResources().getIdentifier(DataSize.get(i).drawable_Name,"drawable",getPackageName());
+                break;
+            }
+        }
+        return resId;
+    }
+
+    public String getBundleData(String key){
+        Bundle bundle_title = this.getIntent().getExtras();
+        String temp = bundle_title.getString(key);
+        return temp;
     }
 
     public void resetClick(View view) {
