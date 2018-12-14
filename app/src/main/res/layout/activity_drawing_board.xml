@@ -18,6 +18,7 @@
 
     <ImageView
         android:id="@+id/iv_Canvas"
+        android:contentDescription="@string/app_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,6 +41,7 @@
 
         <Button
             android:id="@+id/anime_Start"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -48,6 +50,7 @@
 
         <Button
             android:id="@+id/canvas_Clear"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,6 +59,7 @@
 
         <Button
             android:id="@+id/word_Next"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
