@@ -108,6 +108,7 @@ public class DrawingBoard extends AppCompatActivity {
     }
 
     public void wordNext(View view) {
+        mDrawTool.resumeCanvas();
         btn_Multi_Status.setText(R.string.btn_Start);
         try{
             wordTmp = mSender.getNextWord(wordTmp,DataSize);
