@@ -58,6 +58,7 @@ public class DrawingBoard extends AppCompatActivity {
         mImageView = findViewById(R.id.iv_Canvas);
         btn_Multi_Status = findViewById(R.id.anime_Start);
         btn_NextWord = findViewById(R.id.word_Next);
+        DataSize = new ArrayList<>();
     }
 
     public String getBundleData(String key){

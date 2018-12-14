@@ -35,12 +35,11 @@ public class DataHandler {
 
         int[] weight = mContext.getResources().getIntArray(R.array.Storke_weight);
         int total = 0;
-        for(int i = 0;i < deCode(stroke) - 1 ;i++){
+        for(int i = 0;i < deCode(stroke) - 1;i++){
             total += weight[i];
         }
 
-        for(int i = 0;i < weight[deCode(stroke)];i++){
-            System.out.println(new DrawableDataType(res[i],"wg"+makeCode(total+1)));
+        for(int i = 0;i < weight[deCode(stroke)-1];i++){
             Data.add(new DrawableDataType(res[i],"wg"+makeCode(total+1)));
             total++;
         }
