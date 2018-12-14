@@ -1,6 +1,7 @@
 package com.example.zn.practicewriting;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -45,6 +46,30 @@ public class DataHandler {
         }
         return Data;
     }
+
+    public int getResId(String wordName, ArrayList<DrawableDataType> Data){
+        int resId = 0;
+        for(int i=0;i<Data.size();i++){
+            String tmp = Data.get(i).word_Name;
+            if(tmp.equals(wordName)){
+                resId = mContext.getResources().getIdentifier(Data.get(i).drawable_Name,"drawable",mContext.getPackageName());
+                break;
+            }
+        }
+        return resId;
+    }
+
+    public String getNextWord(String wordName,ArrayList<DrawableDataType> Data) throws IndexOutOfBoundsException{
+        for(int i=0;i<Data.size();i++){
+            String tmp = Data.get(i).word_Name;
+            if(tmp.equals(wordName)){
+                wordName = Data.get(i+1).word_Name;
+                break;
+            }
+        }
+        return wordName;
+    }
+
     //make code for data(Hexadecimal)
     public String makeCode(int number){
         String Code = Integer.toHexString(number).toUpperCase();
@@ -54,6 +79,7 @@ public class DataHandler {
         return Code;
     }
 
+    //decode for data()
     public int deCode(String code){
         String tmp_code = "";
         int codeNumber;

@@ -27,6 +27,7 @@ public class DrawingBoard extends AppCompatActivity {
     private DrawTool mDrawTool;
     private DataHandler mSender;
     private ArrayList<DrawableDataType> DataSize;
+    private String wordTmp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class DrawingBoard extends AppCompatActivity {
         DataSize = mSender.getDrawableData(getBundleData("wordCode"),DataSize);
 
         try{
-            int resId = getResId();
+            int resId = mSender.getResId(wordTmp,DataSize);
             mGifDrawable = new GifDrawable(getResources(),resId);
             mGifImageView.setImageDrawable(mGifDrawable);
             mGifDrawable.setLoopCount(1);
@@ -59,19 +60,7 @@ public class DrawingBoard extends AppCompatActivity {
         btn_NextWord = findViewById(R.id.word_Next);
         DataSize = new ArrayList<>();
         mSender = new DataHandler(this);
-    }
-
-    public int getResId(){
-        int resId = 0;
-        String wordName = getBundleData("wordName");
-        for(int i=0;i<DataSize.size();i++){
-            String tmp = DataSize.get(i).word_Name;
-            if(tmp.equals(wordName)){
-                resId = getResources().getIdentifier(DataSize.get(i).drawable_Name,"drawable",getPackageName());
-                break;
-            }
-        }
-        return resId;
+        wordTmp = getBundleData("wordName");
     }
 
     public String getBundleData(String key){
@@ -122,6 +111,21 @@ public class DrawingBoard extends AppCompatActivity {
     }
 
     public void wordNext(View view) {
+        try{
+            wordTmp = mSender.getNextWord(wordTmp,DataSize);
+            mGifDrawable.recycle();
 
+            int resId = mSender.getResId(wordTmp,DataSize);
+            mGifDrawable = new GifDrawable(getResources(),resId);
+            mGifImageView.setImageDrawable(mGifDrawable);
+            mGifDrawable.setLoopCount(1);
+            mGifDrawable.stop();
+        }
+        catch (IndexOutOfBoundsException e){
+            Toast.makeText(this,"已經是最後一個字了!",Toast.LENGTH_SHORT).show();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
