@@ -13,16 +13,15 @@ public class StrokeList extends Activity {
 
     private RecyclerView recycler_view;
     private ArrayList<String> DataSize;
+    private DataHandler mSender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_recycleview);
         init();
 
-        String[] temp = getResources().getStringArray(R.array.Stroke);
-        for (int i = 0; i < temp.length; i++) {
-            DataSize.add(temp[i]);
-        }
+        mSender = new DataHandler(this);
+        DataSize = mSender.getStrokeData(DataSize);
 
         //設置RecyclerView為列表型態
         recycler_view.setLayoutManager(new GridLayoutManager(this, 2));
@@ -47,8 +46,10 @@ public class StrokeList extends Activity {
 
         //Bundle Title and Stroke Code
         Bundle bundle = new Bundle();
+        String Code = mSender.makeCode(view_Pos+1);
+
         bundle.putString("Title",DataSize.get(view_Pos));
-        bundle.putString("Stroke","Word_"+makeCode(view_Pos+1));
+        bundle.putString("Stroke","Word_"+Code);
         intent.putExtras(bundle);
 
         //Next Activity
@@ -57,14 +58,5 @@ public class StrokeList extends Activity {
         //Test
         String str_Stroke = DataSize.get(view_Pos);
         Toast.makeText(this,str_Stroke,Toast.LENGTH_SHORT).show();
-    }
-
-    //make code for data(Hexadecimal)
-    public String makeCode(int number){
-        String Code = Integer.toHexString(number).toUpperCase();
-        while(Code.length() < 3){
-            Code = "0"+Code;
-        }
-        return Code;
     }
 }

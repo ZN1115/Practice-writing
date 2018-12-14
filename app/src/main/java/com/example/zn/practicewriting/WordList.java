@@ -16,6 +16,7 @@ public class WordList extends AppCompatActivity {
     private TextView Stroke_Title;
     private RecyclerView rv_WordList;
     private ArrayList<String> DataSize;
+    private DataHandler mSender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,25 +48,28 @@ public class WordList extends AppCompatActivity {
 
     public void DataSetting(){
         String name = getBundleData("Stroke");
-        int resId = getResources().getIdentifier(name,"array",getPackageName());
-        String[] temp = getResources().getStringArray(resId);
-        for (int i = 0; i < temp.length; i++) {
-            DataSize.add(temp[i]);
-        }
+        mSender = new DataHandler(this);
+        DataSize = mSender.getWordData(name, DataSize);
     }
+
     public void myItemClick(View view){
         //Get the Position for any View
         int view_Pos = rv_WordList.findContainingViewHolder(view).getAdapterPosition();
+        String word = DataSize.get(view_Pos);
 
         //Intent Setting
         Intent intent = new Intent();
         intent.setClass(WordList.this,DrawingBoard.class);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("wordCode",getBundleData("Stroke"));
+        bundle.putString("wordName",word);
+        intent.putExtras(bundle);
+
         //Next Activity
         startActivity(intent);
 
         //Test
-        String word = DataSize.get(view_Pos);
         Toast.makeText(this,word,Toast.LENGTH_SHORT).show();
     }
 }
