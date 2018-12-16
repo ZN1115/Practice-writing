@@ -20,10 +20,14 @@
             android:name=".StrokeList"
             android:label="@string/title_activity_main2" />
         <activity android:name=".WordList" />
+<<<<<<< HEAD
         <activity android:name=".WordMean"></activity>
         <activity android:name=".DrawingBoard" />
         <activity android:name=".video_area"></activity>
 
+=======
+        <activity android:name=".DrawingBoard"></activity>
+>>>>>>> refs/remotes/origin/master
     </application>
 
 </manifest>

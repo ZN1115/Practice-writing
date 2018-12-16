@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".DrawingBoard"
     android:background="@color/background">
+=======
+    tools:context=".DrawingBoard">
+>>>>>>> refs/remotes/origin/master
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/iv_Gif"
@@ -27,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="58dp"
@@ -37,10 +42,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_Gif"
         app:layout_constraintVertical_bias="0.0">
+=======
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Gif">
+>>>>>>> refs/remotes/origin/master
 
         <Button
             android:id="@+id/anime_Start"
             style="@style/Widget.AppCompat.Button"
+<<<<<<< HEAD
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -48,10 +68,18 @@
             android:onClick="resetClick"
             android:text="@string/btn_Start"
             android:textColor="@color/colorBlockGray" />
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="resetClick"
+            android:text="@string/btn_Start" />
+>>>>>>> refs/remotes/origin/master
 
         <Button
             android:id="@+id/canvas_Clear"
             style="@style/Widget.AppCompat.Button"
+<<<<<<< HEAD
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -60,10 +88,18 @@
             android:onClick="resumeCanvas"
             android:text="@string/canvas_Clear"
             android:textColor="@color/colorBlockGray" />
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="resumeCanvas"
+            android:text="@string/canvas_Clear" />
+>>>>>>> refs/remotes/origin/master
 
         <Button
             android:id="@+id/word_Next"
             style="@style/Widget.AppCompat.Button"
+<<<<<<< HEAD
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/canvas_Clear"
@@ -73,5 +109,13 @@
             android:text="@string/word_Next"
             android:textColor="@color/colorBlockGray" />
     </RelativeLayout>
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="wordNext"
+            android:text="@string/word_Next" />
+    </LinearLayout>
+>>>>>>> refs/remotes/origin/master
 
 </android.support.constraint.ConstraintLayout>

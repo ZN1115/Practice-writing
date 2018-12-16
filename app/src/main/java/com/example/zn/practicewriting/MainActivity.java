@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     private ImageButton bt_Video_Area;
     private ImageButton bt_Write_Area;
     private TextView tv_Video_Area;
@@ -25,15 +26,28 @@ public class MainActivity extends AppCompatActivity {
     boolean StatusWrite=false;
     boolean moving=false;//是否移動中
 
+=======
+    private ImageButton Video_Array;
+    private ImageButton Write_Array;
+>>>>>>> refs/remotes/origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+<<<<<<< HEAD
         ObjectAnimator tv_animator=ObjectAnimator.ofFloat(tv_Video_Area,"alpha",0.0F,0.0F).setDuration(2000);
         ObjectAnimator bt_animator=ObjectAnimator.ofFloat(tv_Write_Area,"alpha",0.0F,0.0F).setDuration(2000);
         tv_animator.start();
         bt_animator.start();
+=======
+    }
+
+    //initialize
+    public void init(){
+        Video_Array = (ImageButton) findViewById(R.id.bt_main_video);
+        Write_Array = (ImageButton) findViewById(R.id.bt_main_video);
+>>>>>>> refs/remotes/origin/master
     }
     @Override
     protected void onStart() {
@@ -72,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //當點擊寫字區
     public void To_Write(View view) {
+<<<<<<< HEAD
         moving=true;
         StatusWrite=true;
         CanToNext=true;
@@ -235,5 +250,10 @@ public class MainActivity extends AppCompatActivity {
                 animator.start();
             }
         });
+=======
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, StrokeList.class);
+        startActivity(intent);
+>>>>>>> refs/remotes/origin/master
     }
 }
