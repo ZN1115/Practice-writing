@@ -3,9 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorGray">#B7B7B7</color>
+    <color name="colorItemBackground">#FDA01F</color>
     <color name="colorBlockGray">#F6F6F6</color>
-    <color name="background">#1e1e1e</color>
+    <color name="background">#EFDD9D</color>
+    <color name="Itemname">#F7BC58</color>
+    <color name="noActionBar">#b17015</color>
 
     <color name="light_blue_100">#B3E5FC</color>
     <color name="light_blue_300">#4FC3F7</color>

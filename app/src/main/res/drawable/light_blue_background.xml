@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/light_blue_500" />
+            <solid android:color="@color/noActionBar" />
         </shape>
     </item>
     <item android:state_focused="true">
@@ -12,7 +12,7 @@
     </item>
     <item >
         <shape>
-            <solid android:color="@color/light_blue_100" />
+            <solid android:color="@color/Itemname" />
         </shape>
     </item>
 

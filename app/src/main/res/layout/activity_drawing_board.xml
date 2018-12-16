@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawingBoard"
+    android:background="@color/background">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/iv_Gif"
+        android:layout_width="match_parent"
+        android:layout_height="499dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_Canvas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_Canvas"
+        android:contentDescription="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Gif"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/anime_Start"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/button"
+            android:onClick="resetClick"
+            android:text="@string/btn_Start"
+            android:textColor="@color/colorBlockGray" />
+
+        <Button
+            android:id="@+id/canvas_Clear"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/anime_Start"
+            android:background="@drawable/button"
+            android:onClick="resumeCanvas"
+            android:text="@string/canvas_Clear"
+            android:textColor="@color/colorBlockGray" />
+
+        <Button
+            android:id="@+id/word_Next"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/canvas_Clear"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/button"
+            android:onClick="wordNext"
+            android:text="@string/word_Next"
+            android:textColor="@color/colorBlockGray" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

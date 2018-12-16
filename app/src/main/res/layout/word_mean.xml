@@ -1,42 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    tools:context=".WordMean">
 
-    <LinearLayout
-        android:id="@+id/LL1"
-        android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="這邊放字"
-            android:textSize="20dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+    <TextView
+        android:id="@+id/tv_word"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="140dp"
-        android:layout_below="@+id/LL1"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@color/colorBlockGray"
+        android:gravity="center"
+        android:text="@string/tv_word"
+        android:textSize="90sp" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:layout_height="341dp"
+    <TextView
+        android:id="@+id/tv_mean"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_below="@id/tv_word"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorBlockGray"
+        android:text="@string/tv_mean"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/tv_mean">
+
+        <Button
+            android:id="@+id/again"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="這邊放字義"
-            android:textSize="20dp"
-            android:background="@color/colorAccent"/>
+            android:background="@drawable/button"
+            android:text="@string/again"
+            android:textColor="@color/colorBlockGray" />
+
+        <Button
+            android:id="@+id/canvas_Clear"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="@string/choose"
+            android:textColor="@color/colorBlockGray" />
+
+
     </LinearLayout>
 </RelativeLayout>

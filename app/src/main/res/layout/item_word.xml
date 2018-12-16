@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="102dp"
-    card_view:cardCornerRadius="4dp"
+    card_view:cardCornerRadius="8dp"
     android:layout_margin="5dp"
     android:onClick="myItemClick">
 
@@ -24,7 +24,7 @@
             android:layout_gravity="center"
             android:paddingTop="25dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/light_blue_900"
+            android:textColor="@color/colorBlockGray"
             android:textSize="40dp"
             tools:text="0" />
     </LinearLayout>

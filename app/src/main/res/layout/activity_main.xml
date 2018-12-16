@@ -10,41 +10,45 @@
 
     <ImageButton
         android:id="@+id/bt_main_video"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/draw_circle"
-
+        android:layout_marginTop="248dp"
+        android:background="@drawable/draw_circle_video"
+        android:onClick="To_Video"
         android:scaleType="centerInside"
-        android:src="@drawable/video_pen_icon"
+        android:src="@drawable/video_icon_x64"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/bt_main_video"/>
 
     <ImageButton
         android:id="@+id/bt_main_write"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/draw_circle"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="248dp"
+        android:background="@drawable/draw_circle_pen"
         android:onClick="To_Write"
         android:scaleType="centerInside"
-        android:src="@drawable/video_player_icon4"
+        android:src="@drawable/pen_icon_x64"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/bt_main_write"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -52,5 +56,49 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tv_main_video"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="1"
+        android:text="@string/tv_mainvideo"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <TextView
+        android:id="@+id/tv_main_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="1"
+        android:text="@string/tv_write_area"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+    <RelativeLayout
+        android:id="@+id/page2"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent" >
+
+    </RelativeLayout>
+
+
+
 
 </android.support.constraint.ConstraintLayout>
