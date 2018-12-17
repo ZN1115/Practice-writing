@@ -69,7 +69,7 @@ public class DataHandler {
 
     //make code for data(Hexadecimal)
     public String makeCode(int number){
-        String Code = Integer.toHexString(number).toUpperCase();
+        String Code = Integer.toHexString(number);
         while(Code.length() < 3){
             Code = "0"+Code;
         }

@@ -4,12 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-<<<<<<< HEAD
     tools:context=".StrokeList"
     android:background="@color/background">
-=======
-    tools:context=".StrokeList">
->>>>>>> refs/remotes/origin/master
 
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,10 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="true"
-<<<<<<< HEAD
         android:padding="@dimen/item_margin"
         android:background="@color/background" />
-=======
-        android:padding="@dimen/item_margin" />
->>>>>>> refs/remotes/origin/master
 </LinearLayout>

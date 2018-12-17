@@ -20,23 +20,14 @@
         android:background="@drawable/draw_circle_video"
         android:onClick="To_Video"
         android:scaleType="centerInside"
-<<<<<<< HEAD
         android:src="@drawable/video_icon_x64"
-=======
-        android:src="@drawable/video_player_icon4"
->>>>>>> refs/remotes/origin/master
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.0"
         android:contentDescription="@string/bt_main_video"/>
-=======
-        app:layout_constraintVertical_bias="0.38"
-        android:contentDescription="TODO" />
->>>>>>> refs/remotes/origin/master
 
     <ImageButton
         android:id="@+id/bt_main_write"
@@ -50,23 +41,14 @@
         android:background="@drawable/draw_circle_pen"
         android:onClick="To_Write"
         android:scaleType="centerInside"
-<<<<<<< HEAD
         android:src="@drawable/pen_icon_x64"
-=======
-        android:src="@drawable/video_pen_icon"
->>>>>>> refs/remotes/origin/master
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.0"
         android:contentDescription="@string/bt_main_write"/>
-=======
-        app:layout_constraintVertical_bias="0.38"
-        android:contentDescription="TODO" />
->>>>>>> refs/remotes/origin/master
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

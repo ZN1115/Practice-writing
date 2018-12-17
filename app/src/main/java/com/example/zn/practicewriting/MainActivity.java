@@ -13,94 +13,80 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
     private ImageButton bt_Video_Area;
     private ImageButton bt_Write_Area;
     private TextView tv_Video_Area;
     private TextView tv_Write_Area;
-    final int[] Write_Area_Loc=new int[4];
-    final int[] Video_Area_Loc=new int[4];
-    int ToNextPageCount=0;//數字為2進寫字，為6進影片
-    boolean CanToNext=false;//判斷是否可以進區域
-    boolean StatusVideo=false;//判斷現在是什麼狀態
-    boolean StatusWrite=false;
-    boolean moving=false;//是否移動中
+    final int[] Write_Area_Loc = new int[4];
+    final int[] Video_Area_Loc = new int[4];
+    int ToNextPageCount = 0;//數字為2進寫字，為6進影片
+    boolean CanToNext = false;//判斷是否可以進區域
+    boolean StatusVideo = false;//判斷現在是什麼狀態
+    boolean StatusWrite = false;
+    boolean moving = false;//是否移動中
 
-=======
-    private ImageButton Video_Array;
-    private ImageButton Write_Array;
->>>>>>> refs/remotes/origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-<<<<<<< HEAD
         ObjectAnimator tv_animator=ObjectAnimator.ofFloat(tv_Video_Area,"alpha",0.0F,0.0F).setDuration(2000);
         ObjectAnimator bt_animator=ObjectAnimator.ofFloat(tv_Write_Area,"alpha",0.0F,0.0F).setDuration(2000);
         tv_animator.start();
         bt_animator.start();
-=======
-    }
-
-    //initialize
-    public void init(){
-        Video_Array = (ImageButton) findViewById(R.id.bt_main_video);
-        Write_Array = (ImageButton) findViewById(R.id.bt_main_video);
->>>>>>> refs/remotes/origin/master
     }
     @Override
     protected void onStart() {
-        StatusVideo=false;
-        StatusWrite=false;
+        StatusVideo = false;
+        StatusWrite = false;
         super.onStart();
     }
+
     public void init(){
         bt_Video_Area = (ImageButton) findViewById(R.id.bt_main_video);
         bt_Write_Area = (ImageButton) findViewById(R.id.bt_main_write);
-        tv_Video_Area=(TextView)findViewById(R.id.tv_main_video);
-        tv_Write_Area=(TextView)findViewById(R.id.tv_main_write);
+        tv_Video_Area = (TextView)findViewById(R.id.tv_main_video);
+        tv_Write_Area = (TextView)findViewById(R.id.tv_main_write);
     }
     //是否點擊
     public boolean onTouchEvent(MotionEvent event) {
-        if(moving==true){
+        if(moving == true){
         }
         else{
             if(ToNextPageCount==1)
                 ToNextPageCount=0;
             else if(ToNextPageCount==3)
                 ToNextPageCount=0;
-            if(StatusVideo==true){
+            if(StatusVideo == true){
                 Video_anime_back();
                 bt_Write_Area.setEnabled(true);
-                StatusVideo=false;
+                StatusVideo = false;
             }
-            else if(StatusWrite==true){
+            else if(StatusWrite == true){
                 Write_anime_back();
                 bt_Video_Area.setEnabled(true);
-                StatusWrite=false;
+                StatusWrite = false;
             }
-            return CanToNext=false;
+            return CanToNext = false;
         }
         return false;
     }
     //當點擊寫字區
     public void To_Write(View view) {
-<<<<<<< HEAD
-        moving=true;
-        StatusWrite=true;
-        CanToNext=true;
+        moving = true;
+        StatusWrite = true;
+        CanToNext = true;
         ToNextPageCount++;
         bt_Video_Area.setEnabled(false);
-        if(CanToNext==true&&ToNextPageCount==2){
-            CanToNext=false;
-            ToNextPageCount=0;
+        if(CanToNext == true && ToNextPageCount == 2){
+            CanToNext = false;
+            ToNextPageCount = 0;
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, StrokeList.class);
             startActivity(intent);
             Write_anime_back();
             bt_Video_Area.setEnabled(true);
-            moving=false;
+            moving = false;
         }
         else{
             getLoc();
@@ -109,20 +95,20 @@ public class MainActivity extends AppCompatActivity {
     }
     //當點擊影片區
     public void To_Video(View view){
-        moving=true;
-        StatusVideo=true;
-        CanToNext=true;
-        ToNextPageCount+=3;
+        moving = true;
+        StatusVideo = true;
+        CanToNext = true;
+        ToNextPageCount += 3;
         bt_Write_Area.setEnabled(false);
-        if(CanToNext==true&&ToNextPageCount==6){
-            CanToNext=false;
-            ToNextPageCount=0;
+        if(CanToNext == true && ToNextPageCount == 6){
+            CanToNext = false;
+            ToNextPageCount = 0;
             Intent intent = new Intent();
             intent.setClass(MainActivity.this,video_area.class);
             startActivity(intent);
             Video_anime_back();
             bt_Write_Area.setEnabled(true);
-            moving=false;
+            moving = false;
         }
         else{
             getLoc();
@@ -131,22 +117,23 @@ public class MainActivity extends AppCompatActivity {
     }
     //取得兩button的位置
     private void getLoc() {
-        int []video_Loc=new int[4];
-        int []write_Loc=new int[4];
-        video_Loc[0]= bt_Video_Area.getLeft();
-        video_Loc[1]= bt_Video_Area.getTop();
-        video_Loc[2]= bt_Video_Area.getRight();
-        video_Loc[3]= bt_Video_Area.getBottom();
+        int []video_Loc = new int[4];
+        int []write_Loc = new int[4];
+        video_Loc[0] = bt_Video_Area.getLeft();
+        video_Loc[1] = bt_Video_Area.getTop();
+        video_Loc[2] = bt_Video_Area.getRight();
+        video_Loc[3] = bt_Video_Area.getBottom();
 
-        write_Loc[0]= bt_Write_Area.getLeft();
-        write_Loc[1]= bt_Write_Area.getTop();
-        write_Loc[2]= bt_Write_Area.getRight();
-        write_Loc[3]= bt_Write_Area.getBottom();
+        write_Loc[0] = bt_Write_Area.getLeft();
+        write_Loc[1] = bt_Write_Area.getTop();
+        write_Loc[2] = bt_Write_Area.getRight();
+        write_Loc[3] = bt_Write_Area.getBottom();
         for(int i=0;i<video_Loc.length;i++){
-            Video_Area_Loc[i]=video_Loc[i];
-            Write_Area_Loc[i]=write_Loc[i];
+            Video_Area_Loc[i] = video_Loc[i];
+            Write_Area_Loc[i] = write_Loc[i];
         }
     }
+
     private void Video_anime_back(){
         ObjectAnimator animator;
         ObjectAnimator animator1;
@@ -250,10 +237,5 @@ public class MainActivity extends AppCompatActivity {
                 animator.start();
             }
         });
-=======
-        Intent intent = new Intent();
-        intent.setClass(MainActivity.this, StrokeList.class);
-        startActivity(intent);
->>>>>>> refs/remotes/origin/master
     }
 }
