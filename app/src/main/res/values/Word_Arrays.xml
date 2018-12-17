@@ -221,7 +221,7 @@
         <item>首</item>
         <item>香</item>
     </string-array>
-    <string-array name="Word_00A">
+    <string-array name="Word_00a">
         <item>馬</item>
         <item>骨</item>
         <item>高</item>
@@ -231,7 +231,7 @@
         <item>鬲</item>
         <item>鬼</item>
     </string-array>
-    <string-array name="Word_00B">
+    <string-array name="Word_00b">
         <item>魚</item>
         <item>鳥</item>
         <item>鹵</item>
@@ -239,22 +239,22 @@
         <item>麥</item>
         <item>麻</item>
     </string-array>
-    <string-array name="Word_00C">
+    <string-array name="Word_00c">
         <item>黃</item>
         <item>黍</item>
         <item>黑</item>
     </string-array>
-    <string-array name="Word_00D">
+    <string-array name="Word_00d">
         <item>黽</item>
         <item>鼎</item>
         <item>鼓</item>
         <item>鼠</item>
     </string-array>
-    <string-array name="Word_00E">
+    <string-array name="Word_00e">
         <item>鼻</item>
         <item>齊</item>
     </string-array>
-    <string-array name="Word_00F">
+    <string-array name="Word_00f">
         <item>齒</item>
     </string-array>
     <string-array name="Word_010">

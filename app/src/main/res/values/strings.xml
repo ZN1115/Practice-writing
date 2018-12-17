@@ -7,7 +7,6 @@
     <string name="btn_Restart">再次播放</string>
     <string name="word_Next">下一個字</string>
     <string name="canvas_Clear">清除字跡</string>
-<<<<<<< HEAD
     <string name="title_activity_video__area">video_Area</string>
 
     <string name="bt_main_video">bt_main_video</string>
@@ -22,6 +21,4 @@
     <string name="tv_write">練習</string>
     <string name="bt_close">取消</string>
 
-=======
->>>>>>> refs/remotes/origin/master
 </resources>
