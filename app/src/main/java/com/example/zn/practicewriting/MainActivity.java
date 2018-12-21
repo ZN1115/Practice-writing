@@ -1,8 +1,5 @@
 package com.example.zn.practicewriting;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
     boolean StatusVideo = false;//判斷現在是什麼狀態
     boolean StatusWrite = false;
     boolean moving = false;//是否移動中
+    AnimationSet as;
+    int mWidth;
+    int mHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        ObjectAnimator tv_animator=ObjectAnimator.ofFloat(tv_Video_Area,"alpha",0.0F,0.0F).setDuration(2000);
-        ObjectAnimator bt_animator=ObjectAnimator.ofFloat(tv_Write_Area,"alpha",0.0F,0.0F).setDuration(2000);
-        tv_animator.start();
-        bt_animator.start();
     }
+
     @Override
     protected void onStart() {
         StatusVideo = false;
@@ -47,23 +44,29 @@ public class MainActivity extends AppCompatActivity {
         bt_Write_Area = (ImageButton) findViewById(R.id.bt_main_write);
         tv_Video_Area = (TextView)findViewById(R.id.tv_main_video);
         tv_Write_Area = (TextView)findViewById(R.id.tv_main_write);
+
+        as = new AnimationSet(bt_Video_Area,bt_Write_Area,tv_Video_Area,tv_Write_Area);
+        as.AnimationInit();
+
+        mWidth = getResources().getDisplayMetrics().widthPixels/4 - getResources().getDisplayMetrics().widthPixels/100;
+        mHeight = getResources().getDisplayMetrics().heightPixels/4;
     }
     //是否點擊
     public boolean onTouchEvent(MotionEvent event) {
         if(moving == true){
         }
         else{
-            if(ToNextPageCount==1)
-                ToNextPageCount=0;
-            else if(ToNextPageCount==3)
-                ToNextPageCount=0;
+            if(ToNextPageCount == 1)
+                ToNextPageCount = 0;
+            else if(ToNextPageCount == 3)
+                ToNextPageCount = 0;
             if(StatusVideo == true){
-                Video_anime_back();
+                as.animation_Back((float)mWidth,-(float)mHeight,"Video");
                 bt_Write_Area.setEnabled(true);
                 StatusVideo = false;
             }
             else if(StatusWrite == true){
-                Write_anime_back();
+                as.animation_Back(-(float)mWidth,-(float)mHeight,"Write");
                 bt_Video_Area.setEnabled(true);
                 StatusWrite = false;
             }
@@ -84,13 +87,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, StrokeList.class);
             startActivity(intent);
-            Write_anime_back();
+
+            as.animation_Back(-(float)mWidth,-(float)mHeight,"Write");
             bt_Video_Area.setEnabled(true);
             moving = false;
         }
         else{
             getLoc();
-            Write_anime_move();
+            moving = as.animation_Move(-(float)mWidth/*-180.0F*/,-(float)mHeight/*-270.0F*/,"Write");
         }
     }
     //當點擊影片區
@@ -106,13 +110,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this,video_area.class);
             startActivity(intent);
-            Video_anime_back();
+
+            as.animation_Back((float)mWidth,-(float)mHeight,"Video");
             bt_Write_Area.setEnabled(true);
             moving = false;
         }
         else{
             getLoc();
-            Video_anime_move();
+            moving = as.animation_Move((float)mWidth,-(float)mHeight,"Video");
         }
     }
     //取得兩button的位置
@@ -132,110 +137,5 @@ public class MainActivity extends AppCompatActivity {
             Video_Area_Loc[i] = video_Loc[i];
             Write_Area_Loc[i] = write_Loc[i];
         }
-    }
-
-    private void Video_anime_back(){
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
-        //bt_Video_Area縮放
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"scaleX",1.3F,1.0F).setDuration(1000);
-        animator.start();
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"scaleY",1.3F,1.0F).setDuration(1000);
-        animator.start();
-        //tv_Video_Area消失
-        animator1=ObjectAnimator.ofFloat(tv_Video_Area,"alpha",1.0F,0.0F).setDuration(1000);
-        animator1.start();
-        animator1.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                ObjectAnimator animator;
-                //bt_Video_Area回原位
-                animator=ObjectAnimator.ofFloat(bt_Video_Area,"translationX",170.0F,0.0F).setDuration(1000);
-                animator.start();
-                animator=ObjectAnimator.ofFloat(bt_Video_Area,"translationY",-270.0F,0.0F).setDuration(1000);
-                animator.start();
-                //bt_Write_Area出現
-                animator=ObjectAnimator.ofFloat(bt_Write_Area,"alpha",0.0F,1.0F).setDuration(1000);
-                animator.start();
-            }
-        });
-    }
-    private void Video_anime_move(){
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
-        //bt_Video_Area按鈕移動
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"translationX",0.0F,170.0F).setDuration(1000);
-        animator.start();
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"translationY",0.0F,-270.0F).setDuration(1000);
-        animator.start();
-        //bt_Video_Area按鈕縮放
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"scaleX",1.0F,1.3F).setDuration(1000);
-        animator.start();
-        animator1=ObjectAnimator.ofFloat(bt_Video_Area,"scaleY",1.0F,1.3F).setDuration(1000);
-        animator1.start();
-        //bt_Write_Area消失
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"alpha",1.0F,0.0F).setDuration(1000);
-        animator.start();
-        animator1.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                //tv_Video_Area出現
-                ObjectAnimator animator=ObjectAnimator.ofFloat(tv_Video_Area,"alpha",0.0F,1.0F).setDuration(1000);
-                animator.start();
-                moving=false;
-            }
-        });
-    }
-    private void Write_anime_move(){
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
-        //bt_Write_Area按鈕移動
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"translationX",0.0F,-180.0F).setDuration(1000);
-        animator.start();
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"translationY",0.0F,-270.0F).setDuration(1000);
-        animator.start();
-        //bt_Write_Area按鈕縮放
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"scaleX",1.0F,1.3F).setDuration(1000);
-        animator.start();
-        animator1=ObjectAnimator.ofFloat(bt_Write_Area,"scaleY",1.0F,1.3F).setDuration(1000);
-        animator1.start();
-        //bt_Video_Area消失
-        animator=ObjectAnimator.ofFloat(bt_Video_Area,"alpha",1.0F,0.0F).setDuration(1000);
-        animator.start();
-        animator1.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                //tv_Write_Area出現
-                ObjectAnimator animator=ObjectAnimator.ofFloat(tv_Write_Area,"alpha",0.0F,1.0F).setDuration(1000);
-                animator.start();
-                moving=false;
-            }
-        });
-    }
-    private void Write_anime_back(){
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
-        //bt_Write_Area縮放
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"scaleX",1.3F,1.0F).setDuration(1000);
-        animator.start();
-        animator=ObjectAnimator.ofFloat(bt_Write_Area,"scaleY",1.3F,1.0F).setDuration(1000);
-        animator.start();
-        //tv_Write_Area消失
-        animator1=ObjectAnimator.ofFloat(tv_Write_Area,"alpha",1.0F,0.0F).setDuration(1000);
-        animator1.start();
-        animator1.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                ObjectAnimator animator;
-                //bt_Video_Area回原位
-                animator=ObjectAnimator.ofFloat(bt_Write_Area,"translationX",-180.0F,0.0F).setDuration(1000);
-                animator.start();
-                animator=ObjectAnimator.ofFloat(bt_Write_Area,"translationY",-270.0F,0.0F).setDuration(1000);
-                animator.start();
-                //bt_Video_Area出現
-                animator=ObjectAnimator.ofFloat(bt_Video_Area,"alpha",0.0F,1.0F).setDuration(1000);
-                animator.start();
-            }
-        });
     }
 }
