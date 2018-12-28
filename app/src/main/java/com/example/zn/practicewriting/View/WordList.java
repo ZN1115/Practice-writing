@@ -69,8 +69,15 @@ public class WordList extends AppCompatActivity {
     }
 
     public void To_Word_Mean(View view) {
+        dialog.cancel();
+
         Intent intent = new Intent();
         intent.setClass(WordList.this,WordMean.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("wordName",word);
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 

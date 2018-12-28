@@ -15,7 +15,6 @@
         android:layout_marginTop="70dp"
         android:background="@color/colorGray"
         android:gravity="center"
-        android:text="@string/tv_word"
         android:textSize="90sp" />
 
     <TextView
@@ -38,25 +37,15 @@
         android:layout_below="@id/tv_mean">
 
         <Button
-            android:id="@+id/again"
+            android:id="@+id/btn_reload"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button"
-            android:text="@string/again"
+            android:onClick="reload"
+            android:text="@string/reload"
             android:textColor="@color/colorBlockGray" />
-
-        <Button
-            android:id="@+id/canvas_Clear"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="@string/choose"
-            android:textColor="@color/colorBlockGray" />
-
 
     </LinearLayout>
 </RelativeLayout>

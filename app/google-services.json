@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1008127880183",
+    "firebase_url": "https://practice-writing-database.firebaseio.com",
+    "project_id": "practice-writing-database",
+    "storage_bucket": "practice-writing-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008127880183:android:dbdb020d2b3f80de",
+        "android_client_info": {
+          "package_name": "com.example.zn.practicewriting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008127880183-gvitduj3g59fa98br5dhoalstqkuv3ef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zn.practicewriting",
+            "certificate_hash": "d6150350cd4c61778cb34f0ff2a39a76741ddf7a"
+          }
+        },
+        {
+          "client_id": "1008127880183-frve1p5844434gmn3oo103a46su2iukv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaGZC3f4VVmHpHwiLHKAm54PtwuCdb9B0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008127880183-frve1p5844434gmn3oo103a46su2iukv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

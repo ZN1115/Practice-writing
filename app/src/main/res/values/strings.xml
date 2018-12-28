@@ -14,11 +14,11 @@
     <string name="tv_mainvideo">硬筆書法影片區</string>
     <string name="tv_write_area">練習寫字</string>
     <string name="tv_word">朱</string>
-    <string name="tv_mean">這邊放字義</string>
-    <string name="again">再寫一次</string>
-    <string name="choose">再選一字</string>
+    <string name="tv_mean">(Error Internet:請連上網路)</string>
+    <string name="reload">重新載入資訊</string>
     <string name="tv_word_mean">字義</string>
     <string name="tv_write">練習</string>
     <string name="bt_close">取消</string>
+    <string name="version">1.0.0</string>
 
 </resources>

@@ -7,9 +7,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.example.zn.practicewriting.Animator.AnimationSet;
+import com.example.zn.practicewriting.Others.InternetCheck;
+import com.example.zn.practicewriting.Others.VersionCheck;
 import com.example.zn.practicewriting.R;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,22 +21,30 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton bt_Write_Area;
     private TextView tv_Video_Area;
     private TextView tv_Write_Area;
-    final int[] Write_Area_Loc = new int[4];
-    final int[] Video_Area_Loc = new int[4];
-    int ToNextPageCount = 0;//數字為2進寫字，為6進影片
-    boolean CanToNext = false;//判斷是否可以進區域
-    boolean StatusVideo = false;//判斷現在是什麼狀態
-    boolean StatusWrite = false;
-    boolean moving = false;//是否移動中
-    AnimationSet as;
-    int mWidth;
-    int mHeight;
+    private final int[] Write_Area_Loc = new int[4];
+    private final int[] Video_Area_Loc = new int[4];
+    private int ToNextPageCount = 0;//數字為2進寫字，為6進影片
+    private boolean CanToNext = false;//判斷是否可以進區域
+    private boolean StatusVideo = false;//判斷現在是什麼狀態
+    private boolean StatusWrite = false;
+    private boolean moving = false;//是否移動中
+    private AnimationSet as;
+    private int mWidth;
+    private int mHeight;
+    private Timer mTimer;
+    private VersionCheck versionCheck;
+    private InternetCheck mITC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+
+        if(mITC.InternetState()) {
+            versionCheck = new VersionCheck(this);
+            VersionTip();
+        }
     }
 
     @Override
@@ -53,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         mWidth = getResources().getDisplayMetrics().widthPixels/4 - getResources().getDisplayMetrics().widthPixels/100;
         mHeight = getResources().getDisplayMetrics().heightPixels/4;
+        mITC = new InternetCheck(this);
     }
     //是否點擊
     public boolean onTouchEvent(MotionEvent event) {
@@ -140,5 +153,28 @@ public class MainActivity extends AppCompatActivity {
             Video_Area_Loc[i] = video_Loc[i];
             Write_Area_Loc[i] = write_Loc[i];
         }
+    }
+
+    private void VersionTip(){
+        mTimer = new Timer();
+        mTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(versionCheck.getDataBase_Version() != null) {
+                            if (versionCheck.isNewVersion()) {
+                                Toast.makeText(getApplicationContext(), "有新版本，麻煩請到play商店進行更新!", Toast.LENGTH_LONG).show();
+                                cancel();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "目前為最新版本!", Toast.LENGTH_LONG).show();
+                                cancel();
+                            }
+                        }
+                    }
+                });
+            }
+        },0,1000);
     }
 }
