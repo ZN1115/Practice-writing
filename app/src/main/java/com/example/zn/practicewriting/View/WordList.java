@@ -1,15 +1,18 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.View;
 
 import android.content.Intent;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.zn.practicewriting.Board.DrawingBoard;
+import com.example.zn.practicewriting.Others.ErrorDialog;
+import com.example.zn.practicewriting.Model.DataHandler;
+import com.example.zn.practicewriting.R;
 
 import java.util.ArrayList;
 

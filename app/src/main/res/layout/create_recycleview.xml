@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".StrokeList"
+    tools:context=".View.StrokeList"
     android:background="@color/background">
 
 
@@ -13,6 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:clipToPadding="true"
-        android:padding="@dimen/item_margin"
+        android:paddingTop="25dp"
         android:background="@color/background" />
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Animator;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

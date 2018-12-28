@@ -1,8 +1,10 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.View;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.zn.practicewriting.R;
 
 public class WordMean extends AppCompatActivity {
     @Override

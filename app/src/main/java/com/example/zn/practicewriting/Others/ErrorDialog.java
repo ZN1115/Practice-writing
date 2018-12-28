@@ -1,14 +1,15 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Others;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.example.zn.practicewriting.R;
 
 public class ErrorDialog extends Dialog{
     public Context context;
@@ -21,7 +22,7 @@ public class ErrorDialog extends Dialog{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = View.inflate(context,R.layout.dailog,null);
+        View view = View.inflate(context, R.layout.dailog,null);
         setContentView(view);
 
         Window win = getWindow();

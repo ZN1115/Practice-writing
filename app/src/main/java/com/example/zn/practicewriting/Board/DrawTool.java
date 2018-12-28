@@ -1,4 +1,4 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Board;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

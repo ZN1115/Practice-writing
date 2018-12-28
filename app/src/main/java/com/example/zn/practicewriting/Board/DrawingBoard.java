@@ -1,14 +1,17 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Board;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.zn.practicewriting.Model.DataHandler;
+import com.example.zn.practicewriting.Model.DrawableDataType;
+import com.example.zn.practicewriting.R;
+
 import java.io.IOException;
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;

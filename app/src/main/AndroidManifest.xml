@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StrokeList"
+            android:name=".View.StrokeList"
             android:label="@string/title_activity_main2" />
-        <activity android:name=".WordList" />
-        <activity android:name=".WordMean"></activity>
-        <activity android:name=".DrawingBoard" />
-        <activity android:name=".video_area"></activity>
+        <activity android:name=".View.WordList" />
+        <activity android:name=".View.WordMean"></activity>
+        <activity android:name=".Board.DrawingBoard" />
+        <activity android:name=".View.video_area"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
     </application>
 

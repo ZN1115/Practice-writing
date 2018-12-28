@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background"
-    tools:context=".WordMean">
+    tools:context=".View.WordMean">
 
     <TextView
         android:id="@+id/tv_word"
@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:background="@color/colorBlockGray"
+        android:background="@color/colorGray"
         android:gravity="center"
         android:text="@string/tv_word"
         android:textSize="90sp" />
@@ -26,7 +26,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/colorBlockGray"
+        android:background="@color/colorGray"
         android:text="@string/tv_mean"
         android:textSize="20sp" />
 

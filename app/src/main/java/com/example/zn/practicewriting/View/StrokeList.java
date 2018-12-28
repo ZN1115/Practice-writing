@@ -1,4 +1,4 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.zn.practicewriting.Model.DataHandler;
+import com.example.zn.practicewriting.R;
+
 import java.util.ArrayList;
 
 public class StrokeList extends Activity {

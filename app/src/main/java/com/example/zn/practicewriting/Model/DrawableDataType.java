@@ -1,4 +1,4 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Model;
 
 public class DrawableDataType {
 

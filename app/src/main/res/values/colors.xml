@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorItemBackground">#FDA01F</color>
-    <color name="colorBlockGray">#F6F6F6</color>
+    <color name="colorBlockGray">#000000</color>
+    <color name="colorGray">#F6F6F6</color>
+
     <color name="background">#EFDD9D</color>
     <color name="Itemname">#F7BC58</color>
     <color name="noActionBar">#b17015</color>

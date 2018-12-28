@@ -1,6 +1,9 @@
-package com.example.zn.practicewriting;
+package com.example.zn.practicewriting.Model;
 
 import android.content.Context;
+
+import com.example.zn.practicewriting.R;
+
 import java.util.ArrayList;
 
 public class DataHandler {

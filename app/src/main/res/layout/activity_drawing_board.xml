@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DrawingBoard"
+    tools:context=".Board.DrawingBoard"
     android:background="@color/background">
 
     <pl.droidsonroids.gif.GifImageView
@@ -27,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="58dp"
@@ -43,7 +44,7 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:background="@drawable/button"
             android:onClick="resetClick"
             android:text="@string/btn_Start"
@@ -54,8 +55,8 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_toRightOf="@id/anime_Start"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@id/anime_Start"
             android:background="@drawable/button"
             android:onClick="resumeCanvas"
             android:text="@string/canvas_Clear"
@@ -66,12 +67,13 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/canvas_Clear"
-            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/canvas_Clear"
+            android:layout_marginStart="30dp"
             android:background="@drawable/button"
             android:onClick="wordNext"
             android:text="@string/word_Next"
             android:textColor="@color/colorBlockGray" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
