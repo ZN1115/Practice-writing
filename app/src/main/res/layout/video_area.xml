@@ -13,6 +13,14 @@
         android:layout_marginTop="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="敬請期待"
+        android:text="@string/tv_video_area"
         android:textSize="50dp"/>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_dash_line"/>
+
 </LinearLayout>

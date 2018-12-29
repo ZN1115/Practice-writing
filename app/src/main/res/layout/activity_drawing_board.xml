@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,37 +7,82 @@
     tools:context=".Board.DrawingBoard"
     android:background="@color/background">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/iv_Gif"
-        android:layout_width="match_parent"
-        android:layout_height="499dp"
-        app:layout_constraintBottom_toTopOf="@+id/iv_Canvas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/iv_Canvas"
-        android:contentDescription="@string/app_name"
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="470dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_Gif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_Canvas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name" />
+        <View
+            android:id="@+id/bordertop"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#000000"
+            android:layerType="software" />
+        <View
+            android:id="@+id/borderbottom"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#000000"
+            android:layerType="software"
+            android:layout_alignParentBottom="true"/>
+        <View
+            android:id="@+id/borderleft"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/line_borderbottom"
+            android:layout_alignParentStart="true"
+            android:layerType="software" />
+        <View
+            android:id="@+id/borderright"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/line_borderbottom"
+            android:layout_alignParentEnd="true"
+            android:layerType="software" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_dash_line"
+            android:layout_centerInParent="true"
+            android:layerType="software" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/shape_dash_rotate_line"
+            android:layout_centerInParent="true"
+            app:layout_constraintEnd_toEndOf="@+id/line"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="fill_parent"
         android:layout_height="58dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_Gif"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_below="@id/relativeLayout1">
 
         <Button
             android:id="@+id/anime_Start"
@@ -67,8 +112,8 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:layout_toEndOf="@id/canvas_Clear"
-            android:layout_marginStart="30dp"
             android:background="@drawable/button"
             android:onClick="wordNext"
             android:text="@string/word_Next"
@@ -76,4 +121,4 @@
 
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -6,15 +6,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:orientation="vertical"
-        android:background="@color/colorItemBackground">
+        android:background="@color/colortoolbar">
 
         <TextView
             android:id="@+id/tv_Stroke_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/noto_sans_bold"
             android:paddingTop="20dp"
             android:textColor="@color/colorBlockGray"
             android:textSize="30sp" />

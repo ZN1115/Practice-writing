@@ -27,8 +27,8 @@ public class ErrorDialog extends Dialog{
 
         Window win = getWindow();
         WindowManager.LayoutParams lp = win.getAttributes();
-        lp.height = DensityUtil.dp2px(context,220);
-        lp.width = DensityUtil.dp2px(context,200);
+        lp.height = DensityUtil.dp2px(context,230);
+        lp.width = DensityUtil.dp2px(context,240);
         win.setAttributes(lp);
         view.findViewById(R.id.btn_cancel).setOnClickListener(new Button.OnClickListener() {
             @Override
