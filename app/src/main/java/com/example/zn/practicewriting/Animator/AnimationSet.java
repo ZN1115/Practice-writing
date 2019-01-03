@@ -6,10 +6,12 @@ import android.widget.TextView;
 
 public class AnimationSet {
 
-    ImageButton bt_Video;
-    ImageButton bt_Write;
-    TextView tv_Video;
-    TextView tv_Write;
+    private ImageButton bt_Video;
+    private ImageButton bt_Write;
+    private TextView tv_Video;
+    private TextView tv_Write;
+    private ObjectAnimator animator;
+    private ObjectAnimator animator1;
     public AnimationSet(ImageButton iv,ImageButton iw,TextView tv,TextView tw){
         bt_Video = iv;
         bt_Write = iw;
@@ -22,14 +24,12 @@ public class AnimationSet {
         ObjectAnimator bt_animator = ObjectAnimator.ofFloat(tv_Write,"alpha",0.0F,0.0F).setDuration(2000);
         tv_animator.start();
         bt_animator.start();
+        animator = new ObjectAnimator();
+        animator1 = new ObjectAnimator();
     }
 
-    public boolean animation_Move(Float float_x,Float float_y,String instruction){
-
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
+    public void animation_Move(Float float_x,Float float_y,String instruction){
         AnimatorEx ax = new AnimatorEx();
-        boolean moving;
 
         switch (instruction){
             case "Write":
@@ -67,14 +67,9 @@ public class AnimationSet {
             default:
                 break;
         }
-
-        moving = ax.getMovingStatus();
-        return moving;
     }
 
     public void animation_Back(Float float_x,Float float_y,String instruction){
-        ObjectAnimator animator;
-        ObjectAnimator animator1;
         AnimatorEx ax = new AnimatorEx();
 
         switch (instruction) {
@@ -102,5 +97,9 @@ public class AnimationSet {
             default:
                 break;
         }
+    }
+
+    public boolean getAnimatorStatus() {
+        return animator1.isRunning();
     }
 }

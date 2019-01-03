@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
             versionCheck = new VersionCheck(this);
             VersionTip();
         }
+
+        try{
+            Thread.sleep(1000);
+        }
+        catch (Exception e){}
     }
 
     @Override
@@ -69,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
     }
     //是否點擊
     public boolean onTouchEvent(MotionEvent event) {
-        if(moving == true){
-        }
-        else{
+
+        if(!as.getAnimatorStatus()){
             if(ToNextPageCount == 1)
                 ToNextPageCount = 0;
             else if(ToNextPageCount == 3)
@@ -110,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             getLoc();
-            moving = as.animation_Move(-(float)mWidth/*-180.0F*/,-(float)mHeight/*-270.0F*/,"Write");
+            as.animation_Move(-(float)mWidth,-(float)mHeight,"Write");
+            moving = false;
         }
     }
     //當點擊影片區
@@ -133,7 +138,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             getLoc();
-            moving = as.animation_Move((float)mWidth,-(float)mHeight,"Video");
+            as.animation_Move((float)mWidth,-(float)mHeight,"Video");
+            moving = false;
         }
     }
     //取得兩button的位置
@@ -165,10 +171,10 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         if(versionCheck.getDataBase_Version() != null) {
                             if (versionCheck.isNewVersion()) {
-                                Toast.makeText(getApplicationContext(), "有新版本，麻煩請到play商店進行更新!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "有新版本，麻煩請到play商店進行更新!", Toast.LENGTH_SHORT).show();
                                 cancel();
                             } else {
-                                Toast.makeText(getApplicationContext(), "目前為最新版本!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "目前為最新版本!", Toast.LENGTH_SHORT).show();
                                 cancel();
                             }
                         }

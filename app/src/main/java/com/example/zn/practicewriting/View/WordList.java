@@ -96,6 +96,6 @@ public class WordList extends AppCompatActivity {
         startActivity(intent);
 
         //Test
-        Toast.makeText(this,word,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,word,Toast.LENGTH_SHORT).show();
     }
 }

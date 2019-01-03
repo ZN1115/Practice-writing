@@ -61,6 +61,6 @@ public class StrokeList extends Activity {
 
         //Test
         String str_Stroke = DataSize.get(view_Pos);
-        Toast.makeText(this,str_Stroke,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,str_Stroke,Toast.LENGTH_SHORT).show();
     }
 }
